@@ -344,8 +344,9 @@ void GazeboJointTrajectoryServer::readJointStates(std::vector<float>& currAngles
         unsigned int axis = 0;
         if (joint->GetAngleCount() != 1)
         {
-            ROS_FATAL("Only support 1 axis");
-            exit(1);
+            continue;
+//            ROS_FATAL("Only support 1 axis");
+//            exit(1);
         }
 
         double currAngle = joint->GetAngle(axis).Radian();
